@@ -594,3 +594,64 @@ body {
     filter: none !important;
   }
 }
+
+/* ── Neon glow text ── */
+.neon-text {
+  text-shadow: 0 0 20px rgba(255,200,1,0.5), 0 0 40px rgba(255,200,1,0.2);
+}
+/* ── Glassmorphism card premium ── */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+/* ── Forsythia gradient border ── */
+.gold-border {
+  position: relative;
+}
+.gold-border::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,200,1,0.5), rgba(255,153,50,0.3), rgba(17,76,90,0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+/* ── Section heading accent line ── */
+.heading-accent {
+  position: relative; display: inline-block;
+}
+.heading-accent::after {
+  content: '';
+  position: absolute; bottom: -8px; left: 0; width: 48px; height: 3px;
+  background: linear-gradient(90deg, #FFC801, #FF9932);
+  border-radius: 2px;
+}
+/* ── Floating number stat ── */
+.stat-card {
+  background: linear-gradient(135deg, rgba(255,200,1,0.08) 0%, rgba(17,76,90,0.2) 100%);
+  border: 1px solid rgba(255,200,1,0.15);
+  border-radius: 20px;
+  padding: 24px 32px;
+  text-align: center;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+}
+.stat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,200,1,0.6), transparent);
+}
+.stat-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,200,1,0.2);
+}
+/* ── Gradient section separator ── */
+.section-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,200,1,0.15) 20%, rgba(255,200,1,0.3) 50%, rgba(255,200,1,0.15) 80%, transparent 100%);
+  margin: 0;
+}

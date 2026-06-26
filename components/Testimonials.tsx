@@ -154,7 +154,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <article
               key={t.name}
-              className="tcard group relative rounded-2xl p-7 border border-nocturnal/40 bg-nocturnal/20 overflow-hidden cursor-default"
+              className="tcard group relative rounded-2xl p-8 glass-card overflow-hidden cursor-default"
               style={{
                 opacity: 0, transform: 'translateY(28px)',
                 transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 120}ms, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 120}ms`,
@@ -181,16 +181,16 @@ export default function Testimonials() {
               <Stars n={t.rating} />
 
               {/* Large quote mark */}
-              <div className="text-5xl font-serif leading-none text-forsythia/10 mt-2 mb-1 select-none" aria-hidden="true">"</div>
+              <div className="text-7xl font-serif leading-none text-forsythia/20 mt-2 mb-1 select-none" aria-hidden="true">"</div>
 
-              <blockquote className="text-arctic/75 leading-relaxed text-sm flex-1 mb-6">
+              <blockquote className="text-arctic/80 leading-relaxed text-base flex-1 mb-6">
                 {t.quote}
               </blockquote>
 
               <footer className="flex items-center gap-3">
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center text-sm font-bold flex-shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
-                  style={{ background: t.color, color: t.textColor }}
+                  style={{ background: t.color, color: t.textColor, boxShadow: `0 0 20px ${t.color}40` }}
                   aria-hidden="true"
                 >
                   {t.initials}

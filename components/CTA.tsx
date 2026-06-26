@@ -114,7 +114,7 @@ export default function CTA() {
           className="font-mono font-bold mb-5"
           style={{
             fontFamily: 'var(--font-jetbrains, JetBrains Mono), monospace',
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.1,
             letterSpacing: '-0.02em',
             background: 'linear-gradient(135deg, #F1F6F4 30%, #FFC801 70%, #FF9932 100%)',
@@ -129,6 +129,20 @@ export default function CTA() {
         </p>
 
         {!submitted ? (
+          <>
+            {/* Quick stats */}
+            <div className="flex flex-wrap justify-center gap-8 mb-10">
+              {[
+                { n: '50K+', label: 'Teams using FlowAI' },
+                { n: '4.9★', label: 'Average rating' },
+                { n: '99.9%', label: 'Uptime SLA' },
+              ].map(({ n, label }) => (
+                <div key={n} className="text-center">
+                  <div className="font-mono font-bold text-forsythia text-2xl" style={{ fontFamily: 'var(--font-jetbrains, JetBrains Mono), monospace' }}>{n}</div>
+                  <div className="text-arctic/40 text-xs mt-0.5">{label}</div>
+                </div>
+              ))}
+            </div>
           <form onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
             aria-label="Get started with FlowAI"
@@ -139,16 +153,17 @@ export default function CTA() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@company.com"
               required
-              className="flex-1 px-5 py-3.5 rounded-2xl text-sm text-arctic placeholder-arctic/30 focus:outline-none focus:ring-2 focus:ring-forsythia/50 transition-all duration-200"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+              className="flex-1 px-5 py-3.5 rounded-2xl text-arctic placeholder-arctic/30 focus:outline-none focus:ring-2 focus:ring-forsythia/50 transition-all duration-200"
+              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', fontSize: '1rem' }}
             />
             <button type="submit"
-              className="btn-beam px-7 py-3.5 rounded-2xl font-bold text-sm text-noir whitespace-nowrap cursor-pointer overflow-hidden"
+              className="btn-beam animate-cta-pulse px-9 py-4 rounded-2xl font-bold text-sm text-noir whitespace-nowrap cursor-pointer overflow-hidden"
               style={{ background: 'linear-gradient(135deg, #FFC801, #FF9932)', boxShadow: '0 8px 24px rgba(255,200,1,0.3)' }}
             >
               Get Started Free
             </button>
           </form>
+          </>
         ) : (
           <div className="flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl max-w-md mx-auto"
             style={{ background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)' }}>
@@ -164,7 +179,7 @@ export default function CTA() {
         </p>
 
         {/* Trust logos row */}
-        <div className="flex flex-wrap justify-center gap-6 mt-10 opacity-30">
+        <div className="flex flex-wrap justify-center gap-6 mt-10 opacity-50">
           {['SOC 2','GDPR','ISO 27001','HIPAA'].map((badge) => (
             <div key={badge} className="px-3 py-1.5 rounded-lg border border-arctic/10 text-arctic text-xs font-mono">
               {badge}

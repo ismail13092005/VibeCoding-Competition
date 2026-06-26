@@ -142,7 +142,7 @@ export default function Features() {
           </div>
           <h2
             id="features-heading"
-            className="font-mono font-bold text-arctic mb-4"
+            className="font-mono font-bold text-arctic mb-6 heading-accent"
             style={{
               fontFamily: 'var(--font-jetbrains, JetBrains Mono), monospace',
               fontSize: 'clamp(1.9rem, 4vw, 3rem)',
@@ -161,7 +161,7 @@ export default function Features() {
           {features.map((f, i) => (
             <article
               key={f.title}
-              className="feat-card reveal group relative rounded-2xl p-7 border border-nocturnal/50 bg-nocturnal/15 cursor-default overflow-hidden"
+              className="feat-card reveal group relative rounded-2xl p-7 glass-card cursor-default overflow-hidden"
               style={{
                 transitionDelay: `${i * 70}ms`,
                 transformStyle: 'preserve-3d',
@@ -191,16 +191,20 @@ export default function Features() {
                 style={{ background: `linear-gradient(90deg, transparent, ${f.accent}60, transparent)` }}
               />
 
+              <span className="absolute top-4 right-4 font-mono text-xs text-arctic/15 font-bold select-none" aria-hidden="true">
+                0{i + 1}
+              </span>
+
               {/* Icon */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-200 group-hover:scale-110"
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all duration-200 group-hover:scale-110"
                 style={{ background: `${f.accent}15`, color: f.accent, border: `1px solid ${f.accent}20` }}
                 aria-hidden="true"
               >
-                <div className="w-5 h-5">{f.icon}</div>
+                <div className="w-6 h-6">{f.icon}</div>
               </div>
 
-              <h3 className="font-semibold text-arctic text-base mb-2.5 group-hover:text-forsythia transition-colors duration-200">
+              <h3 className="font-semibold text-arctic text-lg mb-2.5 group-hover:text-forsythia transition-colors duration-200">
                 {f.title}
               </h3>
               <p className="text-arctic/50 text-sm leading-relaxed">{f.description}</p>

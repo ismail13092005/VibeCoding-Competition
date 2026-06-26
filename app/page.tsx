@@ -1,6 +1,7 @@
 import Navigation       from '@/components/Navigation'
 import Hero             from '@/components/Hero'
 import TrustedCompanies from '@/components/TrustedCompanies'
+import SocialProof      from '@/components/SocialProof'
 import Features         from '@/components/Features'
 import BentoGrid        from '@/components/BentoGrid'
 import HowItWorks       from '@/components/HowItWorks'
@@ -28,6 +29,7 @@ export default function Home() {
       <main id="main-content" role="main">
         <Hero />
         <TrustedCompanies />
+        <SocialProof />
         <Features />
         <BentoGrid />
         <HowItWorks />
